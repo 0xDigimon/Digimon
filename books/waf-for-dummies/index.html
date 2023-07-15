@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Web Application Firewalls (WAFs) for Dummies // Abdelrhman Allam</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Abdelrhman Allam" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://sl4x0.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web Application Firewalls (WAFs) for Dummies"/>
+<meta name="twitter:description" content="This is a summary of the book &ldquo;Web Application Firewalls (WAFs)&rdquo; from F5 Security.
+Understanding WAF Basics In today’s digital economy, web applications are a primary target for attackers. Traditional security tools don’t provide adequate protection for your business-critical applications.
+Looking at Essential WAF Capabilities A WAF protects applications by applying a set of rules to the Hypertext Transfer Protocol (HTTP) or Hypertext Transfer Protocol Secure (HTTPS) sessions that web applications use for communication."/>
+
+    <meta property="og:title" content="Web Application Firewalls (WAFs) for Dummies" />
+<meta property="og:description" content="This is a summary of the book &ldquo;Web Application Firewalls (WAFs)&rdquo; from F5 Security.
+Understanding WAF Basics In today’s digital economy, web applications are a primary target for attackers. Traditional security tools don’t provide adequate protection for your business-critical applications.
+Looking at Essential WAF Capabilities A WAF protects applications by applying a set of rules to the Hypertext Transfer Protocol (HTTP) or Hypertext Transfer Protocol Secure (HTTPS) sessions that web applications use for communication." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sl4x0.github.io/books/waf-for-dummies/" /><meta property="article:section" content="books" />
+<meta property="article:published_time" content="2022-11-02T15:10:05+00:00" />
+<meta property="article:modified_time" content="2022-11-02T15:10:05+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://sl4x0.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="Abdelrhman Allam" /></a>
+      <h1>Abdelrhman Allam</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/about/">About</a>
+             // 
+          
+          <a class="app-header-menu-item" href="/">Home</a>
+             // 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>Security Researcher 🐛</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>My Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>My Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+          <a href="https://linkedin.com/in/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>My Twitter</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Web Application Firewalls (WAFs) for Dummies</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 2, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://sl4x0.github.io/tags/basics/">basics</a>
+              <a class="tag" href="https://sl4x0.github.io/tags/web-security/">web-security</a>
+              <a class="tag" href="https://sl4x0.github.io/tags/book/">book</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>This is a summary of the book &ldquo;Web Application Firewalls (WAFs)&rdquo; from <a href="https://www.f5.com/solutions/application-security/web-application-firewalls-for-dummies">F5 Security</a>.</p>
+<p><img src="https://media-exp1.licdn.com/dms/image/D5618AQEkM1VDRfamEA/companyUpdate-article-image-shrink_627_1200/0/1663283936041?e=2147483647&amp;v=beta&amp;t=_uOU0StLoa6VLv_4Bvcs-xof6RQi78YYDLZbWH0HKLQ" alt=""></p>
+<h1 id="understanding-waf-basics">Understanding WAF Basics</h1>
+<blockquote>
+<p>In today’s digital economy, web applications are a primary target for attackers. Traditional security tools don’t provide adequate protection for your business-critical applications.</p>
+</blockquote>
+<h2 id="looking-at-essential-waf-capabilities">Looking at Essential WAF Capabilities</h2>
+<p>A <strong>WAF</strong> protects applications by applying a <strong>set of rules to</strong> the Hypertext Transfer Protocol (<em>HTTP</em>) or Hypertext Transfer Protocol Secure (<em>HTTPS</em>) <strong>sessions</strong> that web applications use for communication.</p>
+<p>A WAF protects web applications from a variety of application layer attacks, such as:</p>
+<ul>
+<li><a href="https://owasp.org/www-community/attacks/xss/">Cross-site scripting (XSS)</a></li>
+<li><a href="https://sl4x0.github.io/web-notes/sql-injection/">SQL injection</a></li>
+<li><a href="https://www.f5.com/services/resources/glossary/cookie-poisoning">Cookie poisoning</a></li>
+</ul>
+<p>A WAF enforces a <strong>set of policies</strong> that help determine what traffic is <strong>malicious</strong> and what traffic is <strong>safe</strong>. Just as a proxy server acts as an intermediary to protect a web client, a WAF operates in the
+reverse (called a <strong><a href="https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/">reverse proxy</a></strong>), acting as an intermediary that protects the web app. The WAF protects your web apps by <strong>filtering</strong>, <strong>monitoring</strong>, and <strong>blocking</strong> any malicious HTTP/S traffic traveling to the web application and prevents any unauthorized data from leaving the application.</p>
+<h2 id="comparing-common-firewall-architectures">Comparing Common Firewall Architectures</h2>
+<h3 id="network-firewalls">Network firewalls</h3>
+<p>A <strong>traditional network firewall</strong> operates at Layers 3 and 4 (<strong>network</strong> and <strong>transport</strong> layers,  respectively), and simply inspects traffic and enforces rules based on an <strong>Internet Protocol</strong> (IP) packet’s <strong>source</strong> and <strong>destination</strong> (IP address, port, and protocol). A traditional firewall <strong>doesn’t</strong> inspect the <strong>payload</strong> to determine if network traffic is malicious.</p>
+<p>The effectiveness of a traditional network firewall is further limited because it identifies an application based on only its <strong>port number</strong>, which can be changed easily to evade detection.</p>
+<h3 id="next-generation-firewalls">Next-generation firewalls</h3>
+<p>A <strong>next-generation firewall</strong> (NGFW) is a network security platform that fully integrates traditional firewall and network intrusion prevention capabilities with other advanced security functions
+that provide <strong>deep packet inspection</strong> (DPI) for complete <strong>visibility</strong>; <strong>accurate application</strong>, <strong>content</strong>, and <strong>user identification</strong>; and granular policy-based control. An NGFW enforces <strong>user-based policies</strong> and adds context to security policies. It may also include capabilities such as <strong>web content filtering</strong>, <strong>antivirus</strong> or <strong>antimalware protection</strong>, and an <strong>intrusion prevention system</strong>.</p>
+<p>NGFWs provide some application-aware features and can also stop some injection attacks such as:</p>
+<ul>
+<li>cross-site scripting (XSS)</li>
+<li>Structured Query Language (SQL) injection</li>
+</ul>
+<p>NGFW still relies on <strong>passive filter</strong> detection and doesn’t examine every HTTP request.</p>
+<p>It works much like an <strong><a href="https://www.paloaltonetworks.com/cyberpedia/what-is-an-intrusion-prevention-system-ips">intrusion prevention system</a></strong>, sampling requests and examining their <strong>first few bytes</strong>, not the full request payload. As a result, application layer bypass attacks against NGFW technologies are common. Plus, <strong><a href="https://www.ipqualityscore.com/ip-reputation-check">IP address reputation feeds</a></strong> implemented on NGFWs and other firewall technologies have proven ineffective against <strong>botnets</strong> and other <strong>automated threats</strong>.</p>
+<h3 id="intrusion-prevention-systems">Intrusion prevention systems</h3>
+<p>An <strong>intrusion prevention system</strong> (IPS) detects and automatically <strong>blocks</strong> suspected network or host intrusions. IPS is typically <strong>signature based</strong>, meaning it checks for known vulnerabilities and attack vectors based on a signature database.</p>
+<p>In general, <strong>IPS</strong> operates at Layers 3 (network) and 4 (transport) and protects traffic across a range of protocol types, such as the following:</p>
+<ul>
+<li>Domain name system (DNS)</li>
+<li>Simple Mail Transfer Protocol (SMTP)</li>
+<li>Telnet</li>
+<li>Remote Desktop Protocol (RDP)</li>
+<li>Secure shell (SSH)</li>
+<li>File Transfer Protocol (FTP)</li>
+</ul>
+<h2 id="protecting-your-organization-with-a-modern-waf">Protecting Your Organization with a Modern WAF</h2>
+<p>WAFs have improved over the years, but they’re still largely based on <strong>passive</strong>, <strong>filterbased</strong> methods to detect malicious payloads and check for <strong>protocol compliance</strong> in web requests.</p>
+<p>A modern WAF employs countermeasures to detect and stop <strong>evolving applicationlayer threats</strong>. At a high level, a modern WAF integrates <strong>behavioral analysis</strong> and <strong>dynamic code injections</strong> to more completely assess the threat associated with any given client session.</p>
+<p>A modern WAF uses <strong>advanced analytics</strong> and <strong>machine learning</strong> to generate <strong>dynamic signatures</strong> that block malicious traffic  — without administrator intervention.</p>
+<p>The <strong>proactive bot defense</strong> of a modern WAF challenges each <strong>client session</strong>, detecting the nature of the client as well as differentiating friendly bots from malicious ones. The challenges are transparent to the user, thereby reducing or eliminating the effect on the <strong>user experience</strong> (UX).</p>
+<p><img src="https://imgur.com/oZWvXgG.png" alt="https://imgur.com/oZWvXgG.png"></p>
+<p>A modern WAF deployed <strong>in front of</strong> your application or <strong>integrated</strong> into several components of a containerized application can help you manage <strong>API security</strong> more effectively.</p>
+<p>A modern WAF provides the following:</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>Advanced application protection</strong>: Combines <strong>machine learning</strong>, threat intelligence, and deep application expertise.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Proactive bot defense</strong>: Protects apps from <strong>automated attacks</strong> by bots and other malicious tools.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Antibot mobile software development kit (SDK)</strong>: Protects <strong>mobile apps</strong> via an allow list, behavioral analysis, secure cookie validation, and advanced app hardening.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>In-browser data encryption</strong>: Encrypts data at the application layer to protect against <strong>data-extracting malware</strong> and <strong>man-in-the-browser attacks</strong>.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Behavioral denial of service (DoS) protection</strong>: Provides highly accurate Layer 7 (application) DoS detection and mitigation.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>API protocol security</strong>: Deploys tools that secure Representational State Transfer (REST), JavaScript Object Notation (JSON), Extensible Markup Language (XML), and Google Web Toolkit (GWT) APIs.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Defenses for the Open Web Application Security Project (OWASP) Top 10</strong>: Defends critical applications from today’s biggest security concerns, which are listed in the OWASP top 10.</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>Stolen credential protection</strong>: Protects against <strong>brute-force</strong> attacks that use stolen credentials.</li>
+</ul>
+<hr>
+<h1 id="integrating-wafs-with-application-architectures">Integrating WAFs with Application Architectures</h1>
+<h2 id="traditional-applications">Traditional Applications</h2>
+<p>A WAF can be deployed not only to <strong>protect</strong> your on-premises web applications but also to <strong>accelerate</strong> the performance of your web applications by, for example, performing <strong><a href="https://www.cloudflare.com/learning/ssl/what-is-ssl/">Secure Sockets Layer</a></strong> (SSL) offloading and decryption for your <strong><a href="https://sl4x0.github.io/research/what-is-web-servers/">web servers</a></strong> and <strong>network firewalls</strong>.</p>
+<p>As <strong>code is updated</strong>, breaking functionality in the application is always a concern, particularly with legacy applications that may not be as well documented or understood as more modern cloud-native applications. Also, a legacy application may use <strong>outdated components</strong> that have known vulnerabilities that were patched and forgotten long ago. Without thorough <strong>regression testing</strong> of not only functionality but also <strong>security</strong>, an old vulnerability can be <strong>exposed once again</strong>, creating an opportunity for attackers.</p>
+<p>Additionally, many organizations plan to move some of these traditional applications to the cloud. This migration sometimes <strong>requires refactoring of the original code</strong> to ensure compatibility and performance in the cloud. During the refactoring process, new <strong>vulnerabilities may be introduced</strong> or <strong>old vulnerabilities re-introduced</strong>.</p>
+<p>A WAF can be integrated into the <strong>application development pipeline</strong> to ensure that software updates do no expose known vulnerabilities and other security risks.</p>
+<h2 id="microservice-design-patterns">Microservice Design Patterns</h2>
+<p>These modern cloud-native applications may leverage thousands of <strong>microservices</strong> and <strong>runtimes</strong> —
+deployed across multiple <strong>public</strong> or <strong>private</strong> clouds — on new and evolving technologies, such as <strong><a href="https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization">containerization</a></strong> and <strong><a href="https://www.cloudflare.com/learning/serverless/what-is-serverless/">serverless computing</a></strong>. In many cases, these microservices are ephemeral,
+sometimes running only a few seconds. Many modern applications leverage shared open-source components and application programming interfaces (APIs), which may not be as well vetted as an organization’s own secure application development pipeline.</p>
+<blockquote>
+<p>A modern WAF can be deployed to automatically identify and protect all the components of a cloud-native application, regardless of their <strong>location</strong> or <strong>how long</strong> they persist.</p>
+</blockquote>
+<h2 id="hybrid-and-multicloud-environments">Hybrid and Multicloud Environments</h2>
+<p>Often, <strong>multiple virtual instances</strong> of a modern WAF must be deployed as close as possible to the web application and its various components and work together to provide comprehensive end-to-end security for the web application.</p>
+<p>Additionally, a modern WAF can simplify your hybrid and multicloud environments by allowing you to centrally configure and implement a <strong>uniform set of controls</strong> across your entire digital estate, rather than being beholden to the often native and proprietary controls of individual cloud providers.</p>
+<h2 id="mobile-applications">Mobile Applications</h2>
+<p>Because many mobile apps leverage <strong>third-party integrations</strong> and functionality, such as a <strong>mobile
+phone’s camera</strong> or <strong><a href="https://en.wikipedia.org/wiki/Global_Positioning_System">global positioning system</a></strong>, businesses must ensure that their mobile applications do not become an attack vector leading to the compromise of individual mobile devices and the data stored on them.</p>
+<hr>
+<h1 id="deploying-wafs">Deploying WAFs</h1>
+<blockquote>
+<p>A web application firewall (WAF) can be deployed in several ways  — it all depends on <strong>where your applications are deployed</strong>, how much <strong>architectural flexibility</strong> you require, and how you want to <strong>manage the WAF</strong>.</p>
+</blockquote>
+<h2 id="addressing-key-considerations">Addressing Key Considerations</h2>
+<p>When deciding which deployment option makes the most sense for your organization, the first question to consider is where your web applications are deployed. Are they all located in an onpremises <strong>data center</strong>? Are they in a <strong>public cloud</strong>? Or are they distributed across multiple clouds in a <strong>microservices architecture</strong>? The answers to these questions will help you determine whether an on-premises or cloud-based WAF is best for your organization and whether it should be a physical or virtual appliance.</p>
+<h2 id="going-the-self-managed-route">Going the Self-Managed Route</h2>
+<p>Whether you deploy on-premises or in a cloud environment, a self-managed WAF gives you complete, <strong>granular control</strong> of your WAF so you can tune it to meet your unique business needs. 
+If you have a mature security organization with the necessary skills and expertise, going the self-managed route provides the most flexibility and may be the right choice for your organization.</p>
+<h2 id="opting-for-a-cloud-delivered-saas-solution">Opting for a Cloud-Delivered (SaaS) Solution</h2>
+<p>The SaaS option provides <strong>flexibility</strong> and <strong>security</strong> policy portability for multicloud deployments, while allowing you to retain control of your traffic management and security policy settings.
+This option can also help you meet your most demanding deployment models where architectural flexibility, performance, and advanced security concerns are paramount.</p>
+<hr>
+<h1 id="ten-key-waf-considerations">Ten Key WAF Considerations</h1>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should work with a traditional Layer 4 or nextgeneration firewall (NGFW), not replace it.</strong></li>
+</ul>
+<p>Traditional firewalls and NGFWs protect your users and network traffic. 
+A WAF protects your web applications. It should be a part of your security ecosystem, helping to protect your entire attack surface.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should integrate with other security tools.</strong></li>
+</ul>
+<p>Integrations with other security tools such as <em>intrusion prevention systems</em> (IPS), <em>vulnerability scanners</em>, and <em>security information and event management</em> (SIEM) platforms are essential to ensure that your WAF doesn’t become another siloed point security solution for your security team to manage.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should be customized to specific applications.</strong></li>
+</ul>
+<p>WAF policies and rules should be <em>customized</em> to meet the unique security, compliance, and performance requirements of your different web applications, as needed.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>WAF policies are not “set it and forget it” rules.</strong></li>
+</ul>
+<p>WAF policies must be <em>regularly updated</em> to match application changes and remain effective against new attack vectors.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should have behavioral learning capabilities.</strong></li>
+</ul>
+<p>Artificial intelligence and machine learning technologies enable a WAF to identify normal application behavior and adapt when anomalies, possibly indicating <em>malicious activity</em>, are detected.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should prevent credential abuse and protect personally identifiable information (PII).</strong></li>
+</ul>
+<p><em>Credential abuse</em> is a major cause of application breaches, leading to unauthorized disclosure of PII and other sensitive application data.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should inspect both ingress and egress traffic.</strong></li>
+</ul>
+<p>A WAF acts as a <em>reverse proxy</em> to protect web applications against malicious inbound traffic. However, your WAF should also inspect <em>outbound traffic</em> to ensure that an application vulnerability hasn’t been exploited and sensitive data isn’t being exfiltrated.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should be DevOps friendly.</strong></li>
+</ul>
+<p>Your WAF should be part of your continuous integration/continuous deployment (CI/CD) pipeline, preventing <em>code-level vulnerabilities</em> from being deployed to production environments.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>A WAF should protect your application programming interfaces (APIs).</strong></li>
+</ul>
+<p>The <em>API economy</em> is integral to application development and third-party integrations, so it’s a rich target for attackers. Your WAF should provide robust protection for your web applications as well as your APIs.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>The Open Web Application Security Project (OWASP) recommends using a WAF.</strong></li>
+</ul>
+<p><a href="%5Bhttps://owasp.org%5D(https://owasp.org/)">The OWASP Foundation</a> is an industry leader in web application development security and recommends that organizations deploy a WAF to protect against web application
+security risks.</p>
+<h4 id="you-can-duplicate-it-into-your-notions-workspace-from-herehttpssl4x0notionsiteweb-application-firewalls-wafs-e5e76fb34ca84ea784492f25b4e12c95">You can Duplicate it into your Notion&rsquo;s Workspace from <a href="https://sl4x0.notion.site/Web-Application-Firewalls-WAFs-e5e76fb34ca84ea784492f25b4e12c95">here</a></h4>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

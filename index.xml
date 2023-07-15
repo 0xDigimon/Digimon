@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abdelrhman Allam</title>
+    <link>https://sl4x0.github.io/</link>
+    <description>Recent content on Abdelrhman Allam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sl4x0.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research | How can Local File Inclusion lead to RCE ?</title>
+      <link>https://sl4x0.github.io/research/local-file-inclusion-to-rce/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/research/local-file-inclusion-to-rce/</guid>
+      <description>Content File Inclusion How the attck works for Remote File Inclusion How the attck works for Local File Inclusion Vulnerable PHP Function for File Inclusion Local File Inclusion To Remote Command Execution LFI to RCE via Apache Log LFI to RCE via Process Environ LFI to RCE via Other Files Fundamental of Perl Library for Exploit Website Introduction to Socket Introduction to Library for WWW in Perl Condition to use Socket or LWP Writing LFI to RCE Exploit with Perl Script Perl Exploit to Injecting code into Target Inject via logfile Inject via Other files Inject via process environment Perl Exploit to Executing injected code on Target Execute code from logfile Execute code from other files Execute code from process environment Execute code from logfile LFI to RCE Complete Exploit Use Logfile Injection Defenses References File Inclusion File Inclusion allows attackers to run their own code on a vulnerable website.</description>
+    </item>
+    
+    <item>
+      <title>Research | Bypass CSRF Protection w/ XSS</title>
+      <link>https://sl4x0.github.io/research/research-bypass-csrf-w-xss/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/research/research-bypass-csrf-w-xss/</guid>
+      <description>Contents About XSS What can we do w/ XSS? Prevention About CSRF Scenario Using XSS for bypassing CSRF protection Another Bypass Technique Exploiting Scenario About XSS In Breif: Web Application receives data from client from GET function, then displays it.
+if(isset($_GET[&amp;#39;text&amp;#39;])) { $var = $_GET[&amp;#39;text&amp;#39;]; print $var; } // This code checks if the &amp;#39;text&amp;#39; variable is set for the GET request. // The code stores its contents in a variable called &amp;#34;$var&amp;#34;, And prints its contents.</description>
+    </item>
+    
+    <item>
+      <title>Web Application Firewalls (WAFs) for Dummies</title>
+      <link>https://sl4x0.github.io/books/waf-for-dummies/</link>
+      <pubDate>Wed, 02 Nov 2022 15:10:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/books/waf-for-dummies/</guid>
+      <description>This is a summary of the book &amp;ldquo;Web Application Firewalls (WAFs)&amp;rdquo; from F5 Security.
+Understanding WAF Basics In today’s digital economy, web applications are a primary target for attackers. Traditional security tools don’t provide adequate protection for your business-critical applications.
+Looking at Essential WAF Capabilities A WAF protects applications by applying a set of rules to the Hypertext Transfer Protocol (HTTP) or Hypertext Transfer Protocol Secure (HTTPS) sessions that web applications use for communication.</description>
+    </item>
+    
+    <item>
+      <title>How i Use Notion with Bug Bounty and Pentesting Books</title>
+      <link>https://sl4x0.github.io/research/my-method-for-making-book-library-with-notion-for-bb-and-pentesting/</link>
+      <pubDate>Fri, 28 Oct 2022 15:10:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/research/my-method-for-making-book-library-with-notion-for-bb-and-pentesting/</guid>
+      <description>You Can Duplicate the Template Form Here!
+Introduction Hello Guys!👋 In This Article, I will Explain How I use Notion effectively for Taking Notes, Summarising and Reviewing Books for Bug Bounty, and other Pentesting Notes or Books.
+So first of all we will use a notion’s function called “Table” or “Database” and It’s like what u imagine, Columns and Rows and within it, we can make a library.
+So without further a do let’s start!</description>
+    </item>
+    
+    <item>
+      <title>Common API Vulnerabilities</title>
+      <link>https://sl4x0.github.io/api-notes/common-api-vulnerablities/</link>
+      <pubDate>Thu, 20 Oct 2022 15:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/api-notes/common-api-vulnerablities/</guid>
+      <description>Understanding common vulnerabilities will help you identify weaknesses when you’re testing APIs.
+Information Disclosure Information may be disclosed in API responses or public sources such as code repositories, search results, news, social media, the target’s website, and public API directories.
+Sensitive data can include any information that attackers can leverage to their advantage.
+For example, a site that is using the WordPress API may unknowingly be sharing user information with anyone who navigates to the API path /wp-json/wp/v2/users</description>
+    </item>
+    
+    <item>
+      <title>GitHub Digging By @Alwali</title>
+      <link>https://sl4x0.github.io/bug-bounty/github-digging/</link>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/bug-bounty/github-digging/</guid>
+      <description>🖨️Employees of The Company
+Google : site:github.com inurl:”org=company”
+GitHub : org:company
+®️ Docker Registry Authentication Data
+https://github.com/Plazmaz/leaky-repo/tree/master/.docker
+org:company filename:.dockercfg
+org:company docker AND auth AND email
+user:name filename:.dockercfg
+user:name docker AND auth AND email
+&amp;quot;[company.com](http://company.com/)&amp;quot; docker AND auth AND email
+🈂️ Web Server Credentials
+https://github.com/Plazmaz/leaky-repo/blob/master/.idea/WebServers.xml
+org:company filename:webservers.xml
+org:company fileTransfer AND pass
+user:name filename:webservers.xml
+user:name fileTransfer AND pass
+&amp;quot;[company.com](http://company.com/)&amp;quot; fileTransfer AND pass
+🔑 Firefox Saved Password Collection
+https://github.com/Plazmaz/leaky-repo/blob/master/.mozilla/firefox/logins.json
+org:company filename:firefox/logins.json
+org:company encryptedUsername encryptedPassword</description>
+    </item>
+    
+    <item>
+      <title>Web Application Hacker’s Methodology</title>
+      <link>https://sl4x0.github.io/books/wahh-methdology/</link>
+      <pubDate>Mon, 26 Sep 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/books/wahh-methdology/</guid>
+      <description>Chapter 21: A Web Application Hacker’s Methodology by @sl4x0 بسم الله الرحمن الرحيمInformation gathered in one stage may enable you to return to an earlier stage and formulate more focused attacks. For example, an access control bug that enables you to obtain a listing of all users may enable you to perform a more effective password-guessing attack against the authentication function. Discovering a key vulnerability in one area of the application may enable you to shortcut some of the work in other areas.</description>
+    </item>
+    
+    <item>
+      <title>Web Sockets Attacks</title>
+      <link>https://sl4x0.github.io/web-notes/web-sockets/</link>
+      <pubDate>Wed, 24 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/web-sockets/</guid>
+      <description>Websockets Refrences What is WebSocket in Arabic
+What are WebSockets? | Web Security Academy
+How to Exploit WebSocket | WebSocket for Beginners
+WebSockets are widely used in modern web applications. They are initiated over HTTP and provide long-lived connections with asynchronous communication in both directions.
+WebSockets are used for various purposes, including user actions and transmitting sensitive information.
+Virtually any web security vulnerability that arises with regular HTTP can also arise in relation to WebSockets communications.</description>
+    </item>
+    
+    <item>
+      <title>Bussiness Logic</title>
+      <link>https://sl4x0.github.io/web-notes/bussiness-logic/</link>
+      <pubDate>Tue, 23 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/bussiness-logic/</guid>
+      <description>Business Logic References AllAboutBugBounty/Business Logic Errors.md at master · daffainfo/AllAboutBugBounty
+Application Logic Bypasses
+Bug-bounty/bugbounty_checklist.md at master · sehno/Bug-bounty
+Business Logic Flaws
+GitHub - ngalongc/bug-bounty-reference: Inspired by https://github.com/djadmin/awesome-bug-bounty, a list of bug bounty write-up that is categorized by the bug nature
+Business Logic Flaws - Pastebin.com
+In this section, we&amp;rsquo;ll introduce the concept of business logic vulnerabilities and explain how they can arise due to flawed assumptions about user behavior.
+What are business logic vulnerabilities?</description>
+    </item>
+    
+    <item>
+      <title>Information Disclosure</title>
+      <link>https://sl4x0.github.io/web-notes/information-disclosure/</link>
+      <pubDate>Tue, 23 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/information-disclosure/</guid>
+      <description>These bugs are common; in fact, they’re the type of bug I find most often while bug bounty hunting, even when I’m searching for other bug types.
+References Sensitive Information Disclosure
+Mechanisms Information disclosure occurs when an application fails to properly protect sensitive information, giving users access to information they shouldn’t have available to them.
+This sensitive information can include technical details that aid an attack, like software version numbers, internal IP addresses, sensitive filenames, filepaths, user’s age, bank account numbers, email addresses, and mailing addresses, to unauthorized third parties.</description>
+    </item>
+    
+    <item>
+      <title>JSON Web Tokens Attacks</title>
+      <link>https://sl4x0.github.io/web-notes/json-web-tokens-attacks/</link>
+      <pubDate>Tue, 23 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/json-web-tokens-attacks/</guid>
+      <description>JWT Attacks In this section, we&amp;rsquo;ll look at how design issues and flawed handling of JSON web tokens (JWTs) can leave websites vulnerable to a variety of high-severity attacks.
+References JWT.IO
+JWT Vulnerabilities
+AllAboutBugBounty/JWT Vulnerabilities
+HowToHunt/JWT at master
+PayloadsAllTheThings/JSON Web Token GitHub - vavkamil/awesome-bugbounty-tools
+Web Application Penetration Testing Notes
+Web Application Penetration Testing Notes
+REST Security - OWASP Cheat Sheet Series
+pentest-guide/JSON-Web-Token-Flaw at master Writeups Bug Bounty hackerone
+JSON Hijacking [XSSI] - Pastebin.</description>
+    </item>
+    
+    <item>
+      <title>File Uploads</title>
+      <link>https://sl4x0.github.io/web-notes/file-uploads/</link>
+      <pubDate>Tue, 23 Aug 2022 12:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/file-uploads/</guid>
+      <description>File Upload References Unrestricted File Upload
+File Upload
+AllAboutBugBounty/Arbitrary File Upload.md at master · daffainfo/AllAboutBugBounty
+File Upload
+HowToHunt/File_Upload_bypass at master · KathanP19/HowToHunt
+File Upload
+File upload
+File Upload Vulnerabilities
+Web Application Penetration Testing Notes
+ArabicWebAppsPentesting/47- File upload labs at master · zigoo0/ArabicWebAppsPentesting
+In this section, you&amp;rsquo;ll learn how simple file upload functions can be used as a powerful vector for a number of high-severity attacks.
+What are file upload vulnerabilities? File upload vulnerabilities are when a web server allows users to upload files to its filesystem without sufficiently validating things like their name, type, contents, or size.</description>
+    </item>
+    
+    <item>
+      <title>Remote Code Execution</title>
+      <link>https://sl4x0.github.io/web-notes/remote-code-execution/</link>
+      <pubDate>Sun, 14 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/remote-code-execution/</guid>
+      <description>Remote code execution (RCE) occurs when an attacker can execute arbitrary code on a target machine because of a vulnerability or misconfiguration. RCEs are extremely dangerous, as attackers can often ultimately compromise the web application or even the underlying web server.
+References Remote Code Execution (RCE)
+GitHub - alexbieber/Bug_Bounty_writeups: BUG BOUNTY WRITEUPS - OWASP TOP 10
+Remote Code Execution (RCE)
+Hacksplaining: Web Security for Developers
+Web Application Penetration Testing Notes</description>
+    </item>
+    
+    <item>
+      <title>Server-Side Request Forgery</title>
+      <link>https://sl4x0.github.io/web-notes/ssrf-attacks/</link>
+      <pubDate>Sun, 14 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/ssrf-attacks/</guid>
+      <description>Server-side request forgery (SSRF) is a vulnerability that lets an attacker send requests on behalf of a server. During an SSRF, attackers forge the request signatures of the vulnerable server, allowing them to assume a privileged position on a network, bypass firewall controls, and gain access to internal services.
+References SSRF (Server Side Request Forgery)
+AllAboutBugBounty/Server Side Request Forgery.md at master · daffainfo/AllAboutBugBounty
+bugbounty-cheatsheet/ssrf.md at master · EdOverflow/bugbounty-cheatsheet
+HowToHunt/SSRF at master · KathanP19/HowToHunt</description>
+    </item>
+    
+    <item>
+      <title>Single-Sign On</title>
+      <link>https://sl4x0.github.io/web-notes/single-sign-on/</link>
+      <pubDate>Sun, 14 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/single-sign-on/</guid>
+      <description>Single sign-on (SSO) is a feature that allows users to access multiple services belonging to the same organization without logging in multiple times.
+Once you’ve logged into a website that uses SSO, you won’t have to enter your credentials again when accessing another service or resource belonging to the same company.
+References SAML Attacks
+HowToHunt/SAML.md at master · KathanP19/HowToHunt
+GitHub - ngalongc/bug-bounty-reference: Inspired by https://github.com/djadmin/awesome-bug-bounty, a list of bug bounty write-up that is categorized by the bug nature</description>
+    </item>
+    
+    <item>
+      <title>SQL Injection</title>
+      <link>https://sl4x0.github.io/web-notes/sql-injection/</link>
+      <pubDate>Sun, 14 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/sql-injection/</guid>
+      <description>SQL is a programming language used to query or modify information stored within a database. A SQL injection is an attack in which the attacker executes arbitrary SQL commands on an application’s database by supplying malicious input inserted into a SQL statement.
+This happens when the input used in SQL queries is incorrectly filtered or escaped and can lead to authentication bypass, sensitive data leaks, tampering of the database, and RCE in some cases.</description>
+    </item>
+    
+    <item>
+      <title>Template Injection</title>
+      <link>https://sl4x0.github.io/web-notes/tempelate-injection/</link>
+      <pubDate>Sun, 14 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/tempelate-injection/</guid>
+      <description>Template engines are a type of software used to determine the appearance of a web page. Developers often overlook attacks that target these engines, called server-side template injections (SSTIs), yet they can lead to severe consequences, like remote code execution.
+References Client Side Template Injection (CSTI)
+Template Injection in Action
+Web Application Penetration Testing Notes
+pentest-guide/Server-Side-Template-Injection at master · Voorivex/pentest-guide
+SSTI (Server Side Template Injection)
+HowToHunt/SSTI.md at master · KathanP19/HowToHunt</description>
+    </item>
+    
+    <item>
+      <title>Open Redirects</title>
+      <link>https://sl4x0.github.io/web-notes/open-redirects-attacks/</link>
+      <pubDate>Tue, 09 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/open-redirects-attacks/</guid>
+      <description>Sites often use HTTP or URL parameters to redirect users to a specified URL without any user action. While this behavior can be useful, it can also cause open redirects,
+References Open Redirects
+Open Redirect
+https://github.com/daffainfo/AllAboutBugBounty/blob/master/Open%20Redirect.md
+bugbounty-cheatsheet/open-redirect.md at master · EdOverflow/bugbounty-cheatsheet
+Open Redirect
+HowToHunt/Open_Redirection at master · KathanP19/HowToHunt
+Open Redirect
+Insecure URL Redirect Kontra
+PayloadsAllTheThings/Open Redirect at master · swisskyrepo/PayloadsAllTheThings
+Open redirects
+pentest-guide/Open-Redirect at master · Voorivex/pentest-guide
+Mechanisms For example, when these users visit their account dashboards at https://example.</description>
+    </item>
+    
+    <item>
+      <title>Directory Traversal</title>
+      <link>https://sl4x0.github.io/web-notes/directory-traversal/</link>
+      <pubDate>Sun, 07 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/directory-traversal/</guid>
+      <description>Directory traversal In this section, we&amp;rsquo;ll explain what directory traversal is, describe how to carry out path traversal attacks and circumvent common obstacles, and spell out how to prevent path traversal vulnerabilities.
+References File Inclusion/Path traversal
+Directory / Path Traversal
+PayloadsAllTheThings/Directory Traversal at master · swisskyrepo/PayloadsAllTheThings
+GitHub - vavkamil/awesome-bugbounty-tools: A curated list of various bug bounty tools
+Laravel - OWASP Cheat Sheet Series
+pentest-guide/Directory-Traversal-File-Include at master · Voorivex/pentest-guide
+Writeups Bug Bounty hackerone</description>
+    </item>
+    
+    <item>
+      <title>Insecure Deserialization</title>
+      <link>https://sl4x0.github.io/web-notes/insecure-deserialization/</link>
+      <pubDate>Sun, 07 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/insecure-deserialization/</guid>
+      <description>Insecure deserialization vulnerabilities happen when applications deserialize program objects without proper precaution. An attacker can then manipulate serialized objects to change the program’s behavior.
+Mechanisms Serialization is the process by which some bit of data in a programming language gets converted into a format that allows it to be saved in a database or transferred over a network.
+Deserialization refers to the opposite process, whereby the program reads the serialized object from a file or the network and converts it back into an object.</description>
+    </item>
+    
+    <item>
+      <title>Authentication</title>
+      <link>https://sl4x0.github.io/web-notes/aurhentication/</link>
+      <pubDate>Wed, 03 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/aurhentication/</guid>
+      <description>In this section, we&amp;rsquo;ll look at some of the most common authentication mechanisms used by websites and discuss potential vulnerabilities in them.
+We&amp;rsquo;ll highlight both inherent vulnerabilities in different authentication mechanisms, as well as some typical vulnerabilities that are introduced by their improper implementation.
+References Authentication - OWASP Cheat Sheet Series
+GitHub - ngalongc/bug-bounty-reference
+GitHub - alexbieber/Bug_Bounty_writeups
+Bug-bounty/bugbounty_checklist
+HowToHunt/Authentication_Bypass Login Bypass
+Mind-Maps/2FA Bypass Techniques
+Web Application Penetration Testing Notes
+Writeups Bug Bounty hackerone</description>
+    </item>
+    
+    <item>
+      <title>XML external entity</title>
+      <link>https://sl4x0.github.io/web-notes/xxe-attacks/</link>
+      <pubDate>Mon, 01 Aug 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/xxe-attacks/</guid>
+      <description>XML external entity injection (also known as XXE) is a web security vulnerability that allows an attacker to interfere with an application&amp;rsquo;s processing of XML data.
+It often allows an attacker to view files on the application server filesystem, and to interact with any back-end or external systems that the application itself can access. XXEs can be very impactful bugs, as they can lead to confidential information disclosure, SSRFs, and DoS attacks.</description>
+    </item>
+    
+    <item>
+      <title>Access Control</title>
+      <link>https://sl4x0.github.io/web-notes/access-control/</link>
+      <pubDate>Tue, 26 Jul 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/access-control/</guid>
+      <description>In this section, we will discuss what access control security is, describe privilege escalation and the types of vulnerabilities that can arise with access control, and summarize how to prevent these vulnerabilities.
+References Hacksplaining: Web Security for Developers
+Mind-Maps/Access Control Vulnerabilities
+All labs - Web Security Academy
+What is access control? Authentication identifies the user and confirms that they are who they say they are. Session management identifies which subsequent HTTP requests are being made by that same user.</description>
+    </item>
+    
+    <item>
+      <title>Insecure Direct Object References</title>
+      <link>https://sl4x0.github.io/web-notes/idor/</link>
+      <pubDate>Tue, 26 Jul 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/idor/</guid>
+      <description>IDORs happen when users can **access resources that do not belong to them** by directly referencing the object ID, object number, or filename.
+References GitHub - vavkamil/awesome-bugbounty-tools: A curated list of various bug bounty tools
+PayloadsAllTheThings/Insecure Direct Object References at master · swisskyrepo/PayloadsAllTheThings
+GitHub - ngalongc/bug-bounty-reference: Inspired by https://github.com/djadmin/awesome-bug-bounty, a list of bug bounty write-up that is categorized by the bug nature
+GitHub - alexbieber/Bug_Bounty_writeups: BUG BOUNTY WRITEUPS - OWASP TOP 10 🔴🔴🔴🔴✔</description>
+    </item>
+    
+    <item>
+      <title>Race Conditions</title>
+      <link>https://sl4x0.github.io/web-notes/race-condition/</link>
+      <pubDate>Thu, 21 Jul 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/race-condition/</guid>
+      <description>Race Condition References RACE CONDITION BUGS!
+PayloadsAllTheThings/Race Condition at master · swisskyrepo/PayloadsAllTheThings
+GitHub - ngalongc/bug-bounty-reference: Inspired by https://github.com/djadmin/awesome-bug-bounty, a list of bug bounty write-up that is categorized by the bug nature
+Race Condition
+GitHub - alexbieber/Bug_Bounty_writeups: BUG BOUNTY WRITEUPS - OWASP TOP 10 🔴🔴🔴🔴✔
+Race-Condition Vulnerability Lab
+pentest-guide/Race-Condition at master · Voorivex/pentest-guide
+Writeups Bug Bounty hackerone
+Race conditions are one of the most interesting vulnerabilities in modern web applications. They stem from simple programming mistakes developers often make, and these mistakes have proved costly: attackers have used race conditions to steal money from online banks, e-commerce sites, stock brokerages, and cryptocurrency exchanges.</description>
+    </item>
+    
+    <item>
+      <title>Clickjacking</title>
+      <link>https://sl4x0.github.io/web-notes/clickjacking/</link>
+      <pubDate>Tue, 19 Jul 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/clickjacking/</guid>
+      <description>References Clickjacking Defense - OWASP Cheat Sheet Series
+Web Application Penetration Testing Notes
+Clickjacking - Kontra
+Protecting Your Users Against Clickjacking
+Clickjacking
+GitHub - alexbieber/Bug_Bounty_writeups: BUG BOUNTY WRITEUPS - OWASP TOP 10 🔴🔴🔴🔴✔
+What is Clickjacking?
+Clickjacking
+What is Clickjacking? Tutorial &amp;amp; Examples - Web Security Academy
+What is clickjacking? Clickjacking, or user-interface redressing, is an attack that tricks users into clicking a malicious button that has been made to look legitimate.</description>
+    </item>
+    
+    <item>
+      <title>Cross-site Request Forgery</title>
+      <link>https://sl4x0.github.io/web-notes/csrf/</link>
+      <pubDate>Tue, 19 Jul 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/csrf/</guid>
+      <description>In this section, we&amp;rsquo;ll explain what cross-site request forgery is, describe some examples of common CSRF vulnerabilities, and explain how to prevent CSRF attacks.
+Cross-site request forgery Refrences AllAboutBugBounty/Cross Site Request Forgery.md at master · daffainfo/AllAboutBugBounty
+HowToHunt/CSRF at master · KathanP19/HowToHunt
+GitHub - alexbieber/Bug_Bounty_writeups: BUG BOUNTY WRITEUPS - OWASP TOP 10 🔴🔴🔴🔴✔
+CSRF (Cross Site Request Forgery)
+PHP CSRF Guard
+Cross Site Request Forgery - Pastebin.com
+Jay M. on LinkedIn: CSRF</description>
+    </item>
+    
+    <item>
+      <title>Cross-Origin Resource Sharing</title>
+      <link>https://sl4x0.github.io/web-notes/cors-misconfigration/</link>
+      <pubDate>Tue, 12 Jul 2022 23:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/web-notes/cors-misconfigration/</guid>
+      <description>In this section, we will explain what cross-origin resource sharing (CORS) is, describe some common examples of cross-origin resource sharing based attacks, and discuss how to protect against these attacks.
+References Bug Bounty Bootcamp: The Guide to Finding and Reporting Web Vulnerabilities
+What is CORS cross-origin resource sharing
+Cross-Origin Resource Sharing CORS MDN
+CORS vulnerability
+CORS Misconfiguration
+CORS - Misconfigurations &amp;amp; Bypass
+PayloadsAllTheThings/README.md at master · swisskyrepo/PayloadsAllTheThings
+Exploiting Misconfigured CORS (Cross Origin Resource Sharing)</description>
+    </item>
+    
+    <item>
+      <title>About Me 🤘</title>
+      <link>https://sl4x0.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/about/</guid>
+      <description>I am Abdelrhman Allam, studying Mathematics and Computer Science at Zagazig University.
+Passionate about cybersecurity and looking forward to getting professional knowledge and skills in this field and working to be a Penetration Tester &amp;amp; Red Team OP.
+I have a base knowledge of OWASP&amp;rsquo;s Top 10 vulnerabilities on Web &amp;amp; API Applications.
+Also I am doing Security Research and Bug Hunting on Different Platforms like, HackerOne and Huntr.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,744 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html lang="en-us">
+  <head>
+    <title>Taha AbdElwahab</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Taha AbdElwahab" />
+    <meta name="description" content="Security Researcher and Bug Hunter ⚓" />
+    <link rel="stylesheet" href="https://esc4n0or.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Taha AbdElwahab"/>
+<meta name="twitter:description" content="Security Researcher and Bug Hunter⚓"/>
+
+    <meta property="og:title" content="Taha AbdElwahab" />
+<meta property="og:description" content="Security Researcher and Bug Hunter⚓" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://Esc4n0or.github.io/" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Esc4n0or.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="Taha AbdElwahab" /></a>
+      <h1>Taha AbdElwahab</h1>
+      <nav class="app-header-menu" style="margin-top: 30px;">
+        <a class="app-header-menu-item" href="/">Home</a>
+             ||   
+          
+        <a class="app-header-menu-item" href="/tags">Tags</a>
+             ||
+          
+       <a class="app-header-menu-item" href="/about">About</a>
+      </nav>
+      <p><h3>Security Researcher and Bug Hunter⚓</h3></p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/Esc4n0or" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>My Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/esc4n0r_8" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>My Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/tahaabdelwahab8/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>My Twitter</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    
+<title>1_Architecture_Fundamentals</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 100%;
+		color: rgb(255, 255, 255);
+	}
+}
+
+body {
+	line-height: 1.6;
+}
+
+a,
+a.visited {
+	color: sandybrown;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: cadetblue;
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b093519d-da25-43f8-a5fd-5393a61b9c6a" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/command-line_blue.svg"/></div><h1 class="page-title">5_Cryptography_and_Password_Cracking</h1></header><div class="page-body"><p id="dfb5bdde-1b41-4bc3-a6aa-8947463e8578" class="">
+</p><ul id="23e1108b-bd62-4540-9bc2-40fd3ffed249" class="bulleted-list"><li style="list-style-type:disc">Cryptography has several types:<ul id="02dafd40-994c-43c7-8199-9d93a3167f37" class="bulleted-list"><li style="list-style-type:circle"><strong>Based on the keys are used </strong><ol type="1" id="b0dac5da-f6e3-41ea-8226-cfa78bb3414c" class="numbered-list" start="1"><li>Symmetric key cryptography → <code>DES</code>(Data Encryption Standard), <code>3DES</code>, <code>AES</code>(Advanced Encryption Standard), <code>RC4</code>, <code>Blowfish</code>.</li></ol><ol type="1" id="0b2cb25b-4553-46c1-9962-5d767db98745" class="numbered-list" start="2"><li>Public key cryptography(Asymmetric)<ul id="6cf537b2-a098-4bd1-965a-3b1f7530249c" class="bulleted-list"><li style="list-style-type:disc">The whole concept of public key cryptography is based on the <span style="border-bottom:0.05em solid"><strong>factorization mathematical problem.</strong></span><ul id="6863cd3d-d911-4f3c-980e-5bdb4c4c26a4" class="bulleted-list"><li style="list-style-type:circle"><code>Factorization problem</code> : There is no known efficient method to find all the factors of any big number (say 300 digits or more).</li></ul></li></ul></li></ol></li></ul><ul id="b95fd3fc-224b-434c-8e29-84f938dcb06e" class="bulleted-list"><li style="list-style-type:circle"><strong>Based on the method of handling data</strong><ol type="1" id="1f4864ee-35df-4270-a24a-f8e7802b073f" class="numbered-list" start="1"><li><mark class="highlight-orange">Block Cipher</mark> → handle data with blocks (8 bytes, 16bytes), and it has a lot of modes.<ol type="a" id="cfbf9a50-832b-4cb4-b1bc-80c7f1567ceb" class="numbered-list" start="1"><li>ECB (Electronic Code Book) → the message is divided into blocks and each block is encrypted separately.</li></ol><ol type="a" id="694bcf5b-c6ea-4686-9d43-380b785bb3a7" class="numbered-list" start="2"><li>CBC (Cipher Block Chaining)</li></ol></li></ol><ol type="1" id="dd249782-1639-48a5-9d92-e32bcd7feb09" class="numbered-list" start="2"><li><mark class="highlight-orange">Stream Cipher</mark> → handle data with one byte in a time.</li></ol></li></ul><ul id="a9c443da-bb58-4bd3-8ae8-3205336d5c93" class="toggle"><li><details open=""><summary>Examples</summary><ul id="dae4df90-3cf9-438b-9b6f-9e5d578450ac" class="bulleted-list"><li style="list-style-type:disc"><code>Caesar’s cipher</code> → It works by replacing each letter in the plain text by a letter some fixed number of positions down the alphabet.</li></ul><ul id="30d8b403-b4f6-4fa7-8c94-1b52e6cde127" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul></li></ul><ul id="0096604c-e65e-4699-9051-7a1ef993911b" class="bulleted-list"><li style="list-style-type:disc"><code>Avalanche </code>→ means that any change in the message/input, will provide a different output.</li></ul><ul id="a4c5525c-027b-4d68-bf1c-0a757d5d3991" class="bulleted-list"><li style="list-style-type:disc">The goal of <code>PKI </code>→ is to make sure that the identity of invidiual or orgnization is effectivly certificated and verified.</li></ul><ul id="b9e525d9-00c1-493a-a1db-3a17431e4ac8" class="bulleted-list"><li style="list-style-type:disc"><code>X.509</code> → is the standard for public key certificates.<ul id="02e6f1a9-60ac-4012-a07f-df7f2693c519" class="bulleted-list"><li style="list-style-type:circle">X.509 certificates are widely used in protocols like SSL/TLS, SET, S/MIME, IPsec and more.</li></ul></li></ul><ul id="dbfca541-35b3-41d8-ab1c-483183d3130e" class="toggle"><li><details open=""><summary>PGP</summary><ul id="d9fad03e-49d7-4447-a047-9e10ff601553" class="bulleted-list"><li style="list-style-type:disc">PGP (Pretty Good Privacy) → copmuter program (windows) is used to encrypt files, provdie digital signature.<ul id="cf2741d3-c161-4b17-a47d-5cc21ec48aeb" class="bulleted-list"><li style="list-style-type:circle">PGP encryption uses public key cryptography, and binds the public key with an e-mail.</li></ul></li></ul><ul id="2a2e0bb3-e5a8-46db-9691-bd3c19298204" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">OpenPGP</mark> is a set of standards which describes the formats for encrypted messages, keys, and digital signatures.</li></ul><ul id="039561ed-0989-4839-a8ea-672575630717" class="bulleted-list"><li style="list-style-type:disc">The PGP software puts them (Public keys of your friend) in a file, called your <code>keyring</code> .</li></ul><ul id="6576ad36-18b0-4a3d-ae6b-427f35d54a9c" class="toggle"><li><details open=""><summary>To send message</summary><ol type="1" id="1553c321-a250-4212-867a-9fa65e334027" class="numbered-list" start="1"><li>PGP generates a symetric key and then encrypt it with a public key</li></ol><ol type="1" id="d53fc897-0ced-4d3d-af6a-91628ac5c92c" class="numbered-list" start="2"><li>encrypt the message with a symmetric key</li></ol><ol type="1" id="e90a023b-cd5a-4707-b23b-b39917250cad" class="numbered-list" start="3"><li>Send the message to the address related to the public key</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c3c195d2-6ec5-41cb-9e73-c7b2de916dc2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">This is much more efficient and allows to have many addresses for the same message by encrypting different symmetric keys with the addresses public keys.</div></figure></details></li></ul><ul id="46e40e94-eb3c-4f33-a2ed-31e0b0de750b" class="bulleted-list"><li style="list-style-type:disc">PGP encrypts only 160-bits of message.</li></ul><figure id="e5574dfc-436c-4dec-b4d1-92d8513b970e" class="image"><a href="5_Cryptography_and_Password_Cracking%20b093519dda2543f8a5fd5393a61b9c6a/Untitled.png"><img style="width:994px" src="5_Cryptography_and_Password_Cracking%20b093519dda2543f8a5fd5393a61b9c6a/Untitled.png"/></a></figure></details></li></ul><ul id="d7fdfade-c159-4e75-a922-5179e19cf495" class="toggle"><li><details open=""><summary>SSH</summary><ul id="3e36cadb-56a4-42a1-8a88-a45143fbc95b" class="bulleted-list"><li style="list-style-type:disc">is used for exchange data between two devices, secure file transfer, port forwarding.</li></ul><ul id="d7ac3bce-23b9-463c-812c-18c33c39bc00" class="bulleted-list"><li style="list-style-type:disc">SSH tunnels are used to transfer unecrypted data over the network through encrypted tunnels.</li></ul><ul id="d2c96d0a-98c4-4131-a383-d2b430082db1" class="bulleted-list"><li style="list-style-type:disc"><strong><code>Pivoting</code></strong>→ tunneling traffic between two networks, through a machine under attacker’s control. </li></ul><ul id="41ed6035-fb71-4ba7-9cb6-87adaa860007" class="toggle"><li><details open=""><summary>Types of SSH tunneling </summary><ol type="1" id="d9fe9823-3eb5-4c8e-be6a-cc358572c1f7" class="numbered-list" start="1"><li>local port forwarding<ul id="f6985fca-7ac7-4a9b-9fff-f59e7cf00d0b" class="bulleted-list"><li style="list-style-type:disc">Here the data comes to the client SSH, fowarding to the SSH server, then to the destination.</li></ul><figure id="4a12c673-30e9-49bc-b3c0-464ea41c8018" class="image"><a href="5_Cryptography_and_Password_Cracking%20b093519dda2543f8a5fd5393a61b9c6a/Untitled%201.png"><img style="width:1105px" src="5_Cryptography_and_Password_Cracking%20b093519dda2543f8a5fd5393a61b9c6a/Untitled%201.png"/></a></figure></li></ol><ol type="1" id="0b7f1498-4edf-4f62-93ef-23a438299760" class="numbered-list" start="2"><li>Remote<p id="78bb7ec5-00e7-4600-a06c-ec39c11136e6" class="">
+</p></li></ol></details></li></ul></details></li></ul><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Crypto Attacks</summary><div class="indented"><ul id="11f39f6b-0cf7-45ef-90ac-7b85ece05cf2" class="bulleted-list"><li style="list-style-type:disc">Cryptographic attacks are attempts to subvert the security of the crypto algorithms by exploiting weaknesses with the goal to decipher ciphertext without knowing the key.<figure id="de803e3a-3de8-4e98-a2db-a7af554ff5a9" class="image"><a href="5_Cryptography_and_Password_Cracking%20b093519dda2543f8a5fd5393a61b9c6a/Untitled%202.png"><img style="width:518px" src="5_Cryptography_and_Password_Cracking%20b093519dda2543f8a5fd5393a61b9c6a/Untitled%202.png"/></a></figure></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="338411bf-a20b-4e7b-991b-845e45e865ef"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">As CPU speeds increase and storage becomes more affordable, cracking time become less and less up to making feasible what now is considered unfeasible. → related to <code>Brute force attacks.</code></div></figure><ul id="67f4a23c-a0ea-4be1-9d9d-eff7fe1c2494" class="bulleted-list"><li style="list-style-type:disc">The explored key space is far smaller compared to the Brute force attack. Considering a 4 letters, lowercase key a dictionary might attempt:
+- <mark class="highlight-red">abba , big, bob, bed, dig, dog, cat, doll, duff,</mark>
+While a brute force would attempt:
+- <mark class="highlight-red">aaaa , aaab, aaac, aaad,</mark></li></ul><ul id="fe5a0850-9158-4ade-9a2f-225fa75bd2ef" class="toggle"><li><details open=""><summary>4. side channel attacks</summary><ul id="73d0129e-046d-44a8-8052-843f3d41acc4" class="bulleted-list"><li style="list-style-type:disc">Side channel attacks don&#x27;t rely just on plaintext/ciphertext information to attack crypto algorithms.<ul id="8056493f-4346-4e71-92aa-0a18bfb91694" class="bulleted-list"><li style="list-style-type:circle">They also take into account physical implementation including the hardware used to encrypt or decrypt data.</li></ul><ul id="b4a8b6c2-2f19-4609-8add-5fefc67f2016" class="bulleted-list"><li style="list-style-type:circle">Time taken to perform an encryption, CPU cycles used and even absorbed power variation during the algorithm can produce important information to a crypto analyst.</li></ul></li></ul></details></li></ul><p id="30240e36-3c31-408e-8d63-7920a1e98446" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Security Pitfalls</summary><div class="indented"><ol type="1" id="d88cde25-00f1-4d86-bcbd-ddff80e62d15" class="numbered-list" start="1"><li>Attacks Against Implemenations</li></ol><ol type="1" id="170a3b3a-842d-4350-93ae-0df8ad811694" class="numbered-list" start="2"><li>Attacks against Passwords (save password in plaintext in a file)</li></ol><ol type="1" id="2ab4cd11-c19e-4979-b81c-21f02d738411" class="numbered-list" start="3"><li>Attacks against Trust models (what if someone hack the database, what is the benefit of the hash 😆 )<ul id="d34e77a9-0e43-4314-88f1-0f238b722f1a" class="bulleted-list"><li style="list-style-type:disc">Cryptographic algorithm that rely on the security of other network protocols make an assumption: that these protocols are secure.</li></ul></li></ol><ol type="1" id="914d2b59-156a-413d-84ba-b8a2f248adb8" class="numbered-list" start="4"><li>Attacks on the users. (weakest link of the chain)</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Windows Passwords</summary><div class="indented"><ul id="d22a9064-150e-41cb-b9ab-b7876211885d" class="bulleted-list"><li style="list-style-type:disc">SAM (Security Account Manager) → is a database that stores passwords.<ul id="469616c5-b38d-4a5c-a206-52749f50024a" class="bulleted-list"><li style="list-style-type:circle">C:\Windows\System32\config<ul id="c05a06ab-f6d3-47a7-a3bd-b72dc01c57eb" class="bulleted-list"><li style="list-style-type:square">But, it is not accessible while the operating system is running. <mark class="highlight-red">(except SYSTEM prev)</mark>.</li></ul></li></ul><ul id="ecd2c2b4-ed24-41b9-bb65-33f62cc82c3b" class="bulleted-list"><li style="list-style-type:circle">These values are also stored in the registry at: HKEY_LOCAL_MACHINE\SAM</li></ul></li></ul><ul id="41ac0b53-0332-474b-bd19-a5c29e359d0f" class="bulleted-list"><li style="list-style-type:disc">it stores the passwords in two formats:<ul id="0205650b-7f42-42d0-9ca3-6ae9f1aff8a4" class="bulleted-list"><li style="list-style-type:circle">LM hash</li></ul><ul id="c798a250-4195-4696-9fbc-22eded592872" class="bulleted-list"><li style="list-style-type:circle">NT hash</li></ul></li></ul><ul id="27817c9a-182f-4278-966f-8e01da1cb3aa" class="toggle"><li><details open=""><summary>1. <strong>Stealing the hashes</strong></summary><ul id="5e91158a-f9fe-483d-b5f9-ad04952e081f" class="bulleted-list"><li style="list-style-type:disc">Depending on the access you have.</li></ul><ul id="6331eb37-6729-4004-85d9-3c61021ce246" class="toggle"><li><details open=""><summary>Remotly</summary><ul id="3a58bc26-cf0f-436b-a7b1-c5ee853f69ea" class="bulleted-list"><li style="list-style-type:disc">In this case, passwords are dumped from the memory of remote system, by loading the password dumping program from remote.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1bd5b824-3cfb-49b8-8d02-39d665377be5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Note: This requires at least an administrative account.</div></figure><ul id="be81e3e8-4e1e-4f04-99a4-226186b153a3" class="bulleted-list"><li style="list-style-type:disc">Tools → pwdump, fgdump, ophcrack</li></ul><ul id="17a1d962-f4f6-41b5-a244-57f730861f26" class="bulleted-list"><li style="list-style-type:disc"><code>By metasploit using → 1. getuid 2. run hashdump</code></li></ul><p id="75ee982e-a138-47d7-bcf7-5b8266e5e0fc" class="">
+</p></details></li></ul><ul id="664814fe-ea54-4e8e-b5b3-61015ab4e176" class="toggle"><li><details open=""><summary>Localy</summary><ul id="ed4e4030-78f1-4802-bc67-032b6842bbb4" class="bulleted-list"><li style="list-style-type:disc">Here you need physical access to the machine<ul id="42aadc1a-4943-4237-8de5-cdbb4eb90dcf" class="bulleted-list"><li style="list-style-type:circle">Running system<ul id="94e0cfeb-244a-4f7d-8512-ce1a5e3d2340" class="bulleted-list"><li style="list-style-type:square">Tools → pwdump, fgdump, SAMinside, ophcrack, I0phtcrack, </li></ul><ul id="d7e52125-7c3f-4101-9804-222ff1d2387d" class="bulleted-list"><li style="list-style-type:square">here you need an administrative account.</li></ul></li></ul><ul id="67833a6e-91a7-489b-9ec9-609ac367b552" class="bulleted-list"><li style="list-style-type:circle">off-line system<ul id="4660a299-e0b5-401c-b7c4-1916ce90dca3" class="bulleted-list"><li style="list-style-type:square">Stealing hashes<ol type="1" id="b378faa6-05ba-43e2-a45a-750f9b617e44" class="numbered-list" start="1"><li>Using Backtrack5 live CD.</li></ol><ul id="5ff3620d-f17e-4b4e-8fb2-f815695c4fc3" class="bulleted-list"><li style="list-style-type:disc">after login run → <code>mount -t ntfs [operating system partition]</code></li></ul><ul id="2fec85c9-4686-4c4b-99aa-09b96f120398" class="bulleted-list"><li style="list-style-type:disc"><code>cd /mnt/sda1/windows/system32/config</code> → here our SAM file.</li></ul><ul id="65cbc049-fbe2-4e51-b4b8-a7aee6e3cf47" class="bulleted-list"><li style="list-style-type:disc">then using bkhive tool or samdump2</li></ul><ol type="1" id="a606396d-c561-49f0-97a7-6660a612b5c4" class="numbered-list" start="2"><li>Ophcrack on live CD</li></ol><ul id="48bbe352-e388-4cef-8fa4-151dddfb8005" class="bulleted-list"><li style="list-style-type:disc">As soon as the CD is run on boot ophcrack will immediately retrieve the password hashes and prompt them to you.</li></ul></li></ul><ul id="832a0a10-8781-48a2-b091-2aa31e3c6b27" class="bulleted-list"><li style="list-style-type:square">Edit hashes<ul id="89835b44-cf2b-476d-b873-bd4d1d3e1ff9" class="bulleted-list"><li style="list-style-type:disc">chntpw → see the book page152 (Cryptography and password carcking)</li></ul></li></ul><ul id="b30b314d-79d1-4123-9452-73c2e07c3754" class="bulleted-list"><li style="list-style-type:square">Bypass login<ul id="29567bbf-e811-4310-9cfe-fc163180ba88" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">Kon-Boot</mark> → is a software which allows to change contents of a Linux and Windows kernel on the fly (while booting).</li></ul><p id="cf5efa19-2a2e-44d1-a4bf-b150b58d5bf4" class="">
+</p></li></ul></li></ul></li></ul></details></li></ul><p id="e2979f3d-a753-464a-a15e-729e5ecc7f2c" class="">
+</p></details></li></ul><ul id="6b1afde3-3416-49b0-9b0b-59986387d678" class="toggle"><li><details open=""><summary><strong>2</strong>. <strong>Pass the hashes</strong></summary><ul id="40c707b4-b123-4098-be30-8f741b7c0f80" class="bulleted-list"><li style="list-style-type:disc">Using metasploit model → exploit/windows/smb/psexec → then insert options.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="03f81642-23a7-46a1-80ee-276cfc4f2a79"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-red">Note: </mark>that if you do not have both LM and NT hashes you can set one of them with 32 0&#x27;s. like this:
+00000000000000000000000000000000:0446385C4CBFBAED9F33E1D7B00E184C</div></figure><p id="51b58b86-63d7-45c3-bbe8-420c6ad69806" class="">
+</p></details></li></ul><ul id="4792191a-25a6-4e6b-84b9-0aed019952ac" class="toggle"><li><details open=""><summary><strong>3. Crack the hashes</strong></summary><ul id="b62e08d0-bdd7-4c47-9db0-0aa4b58d756e" class="bulleted-list"><li style="list-style-type:disc">Using CPU<ul id="2d481a78-54f1-4fb6-a1bf-a37d1ad116ce" class="bulleted-list"><li style="list-style-type:circle">John The Rapper</li></ul><ul id="654e2abe-3b08-4b03-886a-8b08006f0acb" class="bulleted-list"><li style="list-style-type:circle">Ophcrack → using rainbow tables.</li></ul></li></ul><ul id="91895747-f741-46f6-856c-92da2f80b1f7" class="bulleted-list"><li style="list-style-type:disc">Using GPU<ul id="6268d9e7-e9fb-435e-bd59-c922c4d20e2b" class="bulleted-list"><li style="list-style-type:circle">oclHashcat</li></ul><ul id="c0baa037-ea61-4554-bf88-83c4dc6d41ac" class="bulleted-list"><li style="list-style-type:circle">RainbowCrack</li></ul></li></ul></details></li></ul><p id="69b6cb61-339e-43d6-9247-325c15cc6fa7" class="">
+</p></div></details></div></article></body></html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api-notes on Abdelrhman Allam</title>
+    <link>https://sl4x0.github.io/api-notes/</link>
+    <description>Recent content in Api-notes on Abdelrhman Allam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Oct 2022 15:48:05 +0000</lastBuildDate><atom:link href="https://sl4x0.github.io/api-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common API Vulnerabilities</title>
+      <link>https://sl4x0.github.io/api-notes/common-api-vulnerablities/</link>
+      <pubDate>Thu, 20 Oct 2022 15:48:05 +0000</pubDate>
+      
+      <guid>https://sl4x0.github.io/api-notes/common-api-vulnerablities/</guid>
+      <description>Understanding common vulnerabilities will help you identify weaknesses when you’re testing APIs.
+Information Disclosure Information may be disclosed in API responses or public sources such as code repositories, search results, news, social media, the target’s website, and public API directories.
+Sensitive data can include any information that attackers can leverage to their advantage.
+For example, a site that is using the WordPress API may unknowingly be sharing user information with anyone who navigates to the API path /wp-json/wp/v2/users</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Bug bounty playbook - Recon // 0xSlaxo Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Abdelrhman Allam" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://sl4x0.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bug bounty playbook - Recon"/>
+<meta name="twitter:description" content="Chapter 6: Reconnaissance Phase 1 The idea behind horizontal correlation is to find all assets related to a company. This could be acquisitions, CIDR ranges, and domains that are owned by the same person. Vertical correlation when dealing with domains involves finding all subdomains belonging to a single domain.
+CIDR Range A Classless Inter-Domain Routing (CIDR) range is a short way of representing a group of IP addresses. Compromising a server hosted on a company’s CIDR range may lead you directly into their internal network therefore these assets are considered critical and are ideal targets."/>
+
+    <meta property="og:title" content="Bug bounty playbook - Recon" />
+<meta property="og:description" content="Chapter 6: Reconnaissance Phase 1 The idea behind horizontal correlation is to find all assets related to a company. This could be acquisitions, CIDR ranges, and domains that are owned by the same person. Vertical correlation when dealing with domains involves finding all subdomains belonging to a single domain.
+CIDR Range A Classless Inter-Domain Routing (CIDR) range is a short way of representing a group of IP addresses. Compromising a server hosted on a company’s CIDR range may lead you directly into their internal network therefore these assets are considered critical and are ideal targets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sl4x0.github.io/books/bbplaybook-recon/" /><meta property="article:section" content="books" />
+<meta property="article:published_time" content="2022-09-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-30T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://sl4x0.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="Abdelrhman Allam" /></a>
+      <h1>0xSlaxo Blog</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/about/">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/whoami/">WHOAMI</a>
+      </nav>
+      <p>CS Student | Security Researcher</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>My Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.facebook.com/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-facebook">
+  <title>My facebook</title>
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>My Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+          <a href="https://linkedin.com/in/sl4x0" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>My Twitter</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Bug bounty playbook - Recon</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 30, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          8 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://sl4x0.github.io/tags/recon/">recon</a>
+              <a class="tag" href="https://sl4x0.github.io/tags/bug-bounty/">bug-bounty</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="chapter-6-reconnaissance-phase-1">Chapter 6: Reconnaissance Phase 1</h1>
+<p>The idea behind horizontal correlation is to find all assets related to a company. This could be acquisitions, CIDR ranges, and domains that
+are owned by the same person. Vertical correlation when dealing with domains involves finding all subdomains belonging to a single domain.</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12ea1c28-4aed-4b4b-840e-92343cc452a8/Untitled.png" alt="Untitled"></p>
+<h3 id="cidr-range">CIDR Range</h3>
+<p>A Classless Inter-Domain Routing (CIDR) range is a short way of representing a group of IP addresses. Compromising a server hosted on a company’s CIDR
+range may lead you directly into their internal network therefore these assets are considered critical and are ideal targets.</p>
+<h3 id="asn">ASN</h3>
+<p>An Autonomous System Number (ASN) is a way to represent a collection of IPs and who owns them. The IP address pool is spread across five Regional Internet
+Registries (RIRs) AFRINIC, APNIC, ARIN, LACNIC, and RIPE NCC. If a company wishes to buy a block of IP addresses, they must purchase it from one of these providers.</p>
+<h3 id="asn-lookup">ASN Lookup</h3>
+<p>We can use (<a href="https://mxtoolbox.com/asn.aspx">https://mxtoolbox.com/asn.aspx</a>) to find a company’s ASN as well as their correlating CIDR ranges.</p>
+<p>CIDR ranges can be used to help identify assets belonging to an organization. Small organizations tend to host all their assets on the cloud but large
+organizations will have a dedicated IP range.</p>
+<h3 id="reverse-whois">Reverse Whois</h3>
+<p>Searching the whois database we can find all domains registered by the email “*.example.com”.</p>
+<p><a href="https://viewdns.info/reversewhois">https://viewdns.info/reversewhois</a></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/127c9987-a59a-44bc-a60f-320a8d97b6e6/Untitled.png" alt="Untitled"></p>
+<h3 id="reverse-dns">Reverse DNS</h3>
+<p>The A, NS, and MX records are the most popular ways to find domains that are likely to be owned by the same person. If domains share
+the same A, NS, or MX record then it is possible they are owned by the same person.</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a0428ee-c45b-4ba1-b921-b2cd74fd0cd9/Untitled.png" alt="Untitled"></p>
+<p>DNS records can be used to tie domains together. If domains share the same A, NS, or MX record we can assume they are owned by the same entity. There may
+be some false positives but these can be filtered out. This technique will greatly increase your scope has a bug bounty hunter, just make sure it’s allowed first.</p>
+<h3 id="google-dork">Google Dork</h3>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f2ca2d1-2beb-4d17-aa39-f74ae36a55d9/Untitled.png" alt="Untitled"></p>
+<p>We can then take that copyright text and search for every other website that contains this text.</p>
+<p>Using the “intext” google dork with an organizations copyright text we can find sites owned by the same company. Google dorks are a great way to find hidden
+assets the only drawback is that this technique tends to be highly manually.</p>
+<h3 id="tools">Tools</h3>
+<ul>
+<li>
+<p><strong>Amass</strong></p>
+<p><a href="https://github.com/OWASP/Amass">https://github.com/OWASP/Amass</a></p>
+<p>ASN :  we can use a company’s ASN number to find a list of assets belong to the organization.</p>
+<p><code>amass intel -org &lt;company name here&gt;</code></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/db487510-6c84-4dbc-8a52-6bdb79e2e853/Untitled.png" alt="Untitled"></p>
+<p>you can find the associated CIDR range by using the following bash command:</p>
+<p><code>whois -h [whois.radb.net](http://whois.radb.net/) -- '-i origin &lt;ASN Number Here&gt;' | grep -Eo &quot;([0-9.]+){4}/[0-9]+&quot; | sort -u</code></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5ba6c372-f960-45e9-9e3b-8db0bd16ce3b/Untitled.png" alt="Untitled"></p>
+<p>The following command can be used to find domains running on a given ASN:</p>
+<p><code>amass intel -asn &lt;ASN Number Here&gt;</code></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0596a25d-402b-4d74-8be5-5cecab299cb2/Untitled.png" alt="Untitled"></p>
+<p>The following command can be used to issue this request:</p>
+<p><code>amass intel -whois -d &lt;Domain Name Here&gt;</code></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc3edb95-b2a1-499b-a41a-09f5a4f017a2/Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>Amass is one of the best tools for asset discovery. If you’re looking to expand your scope by finding additional domains owned by your target amass is the perfect tool.</p>
+<p>Many bug bounty programs have a fixed scope to a set of domains or IPs so you won’t be allowed to targets others endpoints. However, some bug
+bounties have an open scope which allows you to target asset they own. Being able to find CIDR ranges, domains, and other assets is vital if your hunting on a
+target with an open scope Using the tool amass will allow you to perform this entire phase with one tool.</p>
+<hr>
+<h1 id="chapter-7-reconnaissance-phase-2">Chapter 7: Reconnaissance Phase 2</h1>
+<h3 id="wordlist">Wordlist</h3>
+<p>Your wordlist can make or break you during the reconnaissance phase.</p>
+<ul>
+<li>
+<p><strong>Sec List</strong></p>
+<p>Seclists from danielmiessler is a very popular source of different wordlists.</p>
+<p><a href="https://github.com/danielmiessler/SecLists">https://github.com/danielmiessler/SecLists</a></p>
+</li>
+<li>
+<p><strong>Robots Disallow</strong></p>
+<p>When performing directory brute force attacks I want to know if there is something juicy that can lead to a quick win this
+can be accomplished with the robots disallow wordlist: <a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/RobotsDisallowed-Top1000.txt">SecLists/RobotsDisallowed-Top1000.txt at master · danielmiessler/SecLists · GitHub</a></p>
+<p>If you’re looking to find interesting endpoints on a target this is the list for you.</p>
+</li>
+<li>
+<p><strong>RAFT</strong></p>
+<p>The RAFT wordlists contains a large number of interesting filenames and directories</p>
+<p><a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-directories.txt">https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-directories.txt</a>
+<a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-files.txt">https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-files.txt</a></p>
+</li>
+<li>
+<p><strong>Technology Specific</strong></p>
+<p>If you are running a directory brute force on a PHP application it doesn&rsquo;t make sense to use a wordlist that contains .ASP filenames as those are
+associated with .NET applications. Seclists contains specific wordlists for PHP, Golang, ASP, Apache, IIS, and a bunch more.</p>
+<p><a href="https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content/CMS">https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content/CMS</a></p>
+</li>
+</ul>
+<p>Seclists is a one stop shop for wordlists. This repo will contain almost every wordlist you will need while hunting for bugs or performing a penetration test.</p>
+<ul>
+<li>
+<p><strong>All Jhadixx</strong></p>
+<p>The all word list from jhaddix is probably the largest wordlist out there, the majority of people use this wordlist for subdomain brute forcing.</p>
+<p><a href="https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056">all wordlists from every dns enumeration tool&hellip; ever. Please excuse the lewd entries =/ · GitHub</a></p>
+</li>
+<li>
+<p><strong>CRTSH</strong></p>
+<p>Internetwache created a tool to scrape this database for subdomains. Every hour Internetwache uses this tool to update his wordlist.</p>
+<p><a href="https://github.com/internetwache/CT_subdomains">https://github.com/internetwache/CT_subdomains</a></p>
+</li>
+</ul>
+<p>Having a bad word list will cause you to miss all kinds of easy wins. Properly preparing a good word list to use is vital when performing directory, subdomain,
+or parameter brute forcing.</p>
+<h3 id="subdomain-enumeration">Subdomain Enumeration</h3>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/47af710a-221d-44ca-b9d1-a596ed636b5a/Untitled.png" alt="Untitled"></p>
+<h3 id="certification-transparency-logs"><strong>Certification Transparency Logs</strong></h3>
+<p>Any site that starts with HTTPS:// uses SSL certificates to provide a secure connection.  We as attackers can utilize this database to find
+subdomains of a target, as long as they have an SSL certificate they will be logged in a database.</p>
+<h3 id="certification-transparency-logs-1">Certification Transparency Logs</h3>
+<p>Every time you get an SSL certificate for your domain or subdomain it will be logged in certificate transparency logs. We can take advantage of this
+behavior to help enumerate subdomains belonging to a domain.  We can find all SSL certificates belonging to a domain by issuing a
+GET request to <code>[https://crt.sh/?q=%25.facebook.com](https://crt.sh/?q=%25.facebook.com)</code> as shown below:</p>
+<h3 id="brute-force">Brute Force</h3>
+<p>DNS can be used to brute force subdomains without sending packets to your target. All you do is perform a DNS requests against a
+subdomain if it resolves to an IP then you know it’s live.</p>
+<ul>
+<li>
+<p><strong>Gobuster</strong></p>
+<p><a href="https://github.com/OJ/gobuster">https://github.com/OJ/gobuster</a></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/62df68eb-1066-4837-9c01-ea8a158ccf28/Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="subdomain-permutation">Subdomain Permutation</h3>
+<p>For example, if we have the subdomain <a href="http://test.starbcuks.com/">test.starbcuks.com</a> and the words dev, stage, and production we
+could come up with several possible subdomains. We would have dev<a href="http://test.starbucks.com/">test.starbucks.com</a>, <a href="http://dev.test.starbucks.com/">dev.test.starbucks.com</a>, <a href="http://production-test.starbucks.com/">production-test.starbucks.com</a>, and
+so on. All this can be done automatically with <code>altdns</code></p>
+<ul>
+<li>
+<p><strong>altdns</strong></p>
+<p><a href="https://github.com/infosec-au/altdns">https://github.com/infosec-au/altdns</a></p>
+<p>Using altdns we can pass in a list of found subdomains and a list of words and the tool will output a huge list of permutations. The tool can also resolve each
+newly found subdomain to see if they are live:  <code>altdns -i found_subdomains.txt -o permutation_output -w words.txt -r -s resolved_output.txt</code></p>
+</li>
+</ul>
+<p>A small list of these resources can be found below:
+● Virus Total
+● Netcraft
+● DNSdumpster
+● Threat crowed
+● Shodan
+● Cencys
+● DNSdb
+● Pastebin</p>
+<h3 id="tools-1">Tools</h3>
+<ul>
+<li>
+<p><strong>Amass</strong></p>
+<p><a href="https://github.com/OWASP/Amass">https://github.com/OWASP/Amass</a></p>
+<p>Use the following command to get a list of subdomains using amass:
+<code>amass enum -passive -d &lt;Domain Name Here&gt;</code></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f09ab114-4554-45d4-9735-51520bac3a19/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Knock.py</strong></p>
+<p>This tool seems to miss a lot of subdomains but I still like it because it shows the response status and the technology stack. This is very useful for quickly understanding each subdomain.</p>
+<p><a href="https://github.com/guelfoweb/knock">https://github.com/guelfoweb/knock</a> Use the following command to run the tool:
+[<code>knockpy.py](http://knockpy.py/) &lt;Domain Name Here&gt;</code></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ed650740-0625-41c2-a1be-1db769bf333e/Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>Amass can be used to scrape all of the third-party resources. Gobuster should be used for brute forcing subdomains, and the tool Altdns
+should be used for subdomain permutations. If you use all of these techniques correctly you should have a very thorough list of subdomains.</p>
+<h3 id="dns-resolutions">DNS Resolutions</h3>
+<p>If you have a list of subdomains you can use <strong>Massdns</strong> to determine which ones are live domains.</p>
+<ul>
+<li>
+<p><strong>Massdns</strong></p>
+<p><a href="https://github.com/blechschmidt/massdns">https://github.com/blechschmidt/massdns</a></p>
+</li>
+</ul>
+<h3 id="screen-shot">Screen shot</h3>
+<ul>
+<li>
+<p><strong>EyeWitness</strong></p>
+<p><a href="https://github.com/FortyNorthSecurity/EyeWitness">https://github.com/FortyNorthSecurity/EyeWitness</a></p>
+<p><code>Python3 [EyeWitness.py](http://eyewitness.py/) -f subdomains.txt --web</code> Once the tool is finished you can scroll through each of the screen
+shots to find interesting endpoints.</p>
+</li>
+</ul>
+<h3 id="content-discovery">Content Discovery</h3>
+<p>The main purpose behind content discovery is to find endpoints on a target domain. You are looking for things such as log files, config files, interesting technologies or applications, and anything else that is hosted on the website.</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9266e1b-6d9a-43db-9655-981c9418c5f1/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>
+<p><strong>Wayback machine crawl data</strong></p>
+<p><a href="https://web.archive.org/">Wayback Machine</a></p>
+<p>These endpoints can then be queried to pull down every path the site has ever crawled as shown below:</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f0ff2d9-238e-4fb4-91f5-875c2fcf5e9a/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Directory brute force</strong></p>
+<p>Depending on your wordlists you can find all kinds of interesting endpoints like backup files, core dumps, config files, and a whole lot more.</p>
+<p><code>./gobuster dir -k -w &lt;Wordlist&gt; -u &lt;URL&gt;</code></p>
+</li>
+</ul>
+<p>Content discovery can be performed passively or actively. The Wayback Machine and Common Crawl can both be utilized to find crawled endpoints of your targets. These resources are nice because they are completely passive. You can also actively crawl the target endpoint yourself to gather real time
+information. Crawling is useful for finding public endpoints but what about hidden or misconfigured endpoints. Directory brute forcing is perfect for finding hidden endpoints just make sure your using a high-quality wordlist. When it comes to brute forcing your wordlist is everything</p>
+<h3 id="inspecting-javascript-files">Inspecting JavaScript Files</h3>
+<p>There are also other interesting things in JavaScript files such as AWS keys, S3 bucket endpoints, API keys, and much more. To deal with applications that utilize JavaScript you need to use special
+tools and techniques.</p>
+<ul>
+<li>
+<p><strong>Link Finder</strong></p>
+<p><a href="https://github.com/GerbenJavado/LinkFinder">https://github.com/GerbenJavado/LinkFinder</a></p>
+<p>Linkfinder is one of the best tools for parsing endpoints from JavaScript files. The tool works by using jsbeautifier with a list of regexes to find URLs</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4327b965-626d-4d00-bda9-4a1e883699e1/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Jssearch</strong></p>
+<p>For instance, developers will sometimes hard code API keys, AWS credentials, and other sensitive information in JavaScript files. This information can easily be parsed out with the use of regexes.</p>
+<p><a href="https://github.com/incogbyte/jsearch">https://github.com/incogbyte/jsearch</a></p>
+<p>This tool is really good when it comes to analyzing JavaScript files. Make sure to add your own custom regexes to improve your results.</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c6187f53-ae01-42d2-a475-ca1f0980c365/Untitled.png" alt="Untitled"></p>
+</li>
+<li>
+<p><strong>Google Dorks</strong></p>
+<p><a href="https://www.exploit-db.com/google-hacking-database">Offensive Security&rsquo;s Exploit Database Archive</a></p>
+<p><a href="https://gbhackers.com/latest-google-dorks-list/">Google Dorks List 2020 - A Complete Cheat Sheet</a></p>
+<p><a href="https://dorks.faisalahmed.me/">Bug Bounty Helper</a></p>
+<p>Google dorks can be used to find anything and everything about your target.
+Google dorks have been around for a long time and they don’t seem to be going
+away anytime soon.</p>
+</li>
+</ul>
+<p>You should be spending a fair amount of time during the recon phase, the more assets and endpoints you can uncover the better your odds of finding a vulnerability</p>
+<hr>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
