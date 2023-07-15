@@ -1,31 +1,24 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Abdelmawla Elamrosy</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.101.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Abdelmawla Elamrosy" />
-    <meta name="description" content="Security Researcher and Bug Hunter ⚓" />
-    <link rel="stylesheet" href="https://0xdigimon.github.io/Digimon/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
-
-    
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About Me 👑"/>
-<meta name="twitter:description" content="I’m a Computer and Control Engineer, Interested in Cyber Security field specially Network
-and Web penetration testing, I have knowledge with programming (I was a Software
-Team leader in my graduation Project) and Networks, Active Directory.
-I play CTFs on platforms like TryHackMe, HackTheBox,VulnHub, Port Swigger, &amp; Root-Me."/>
-
-    <meta property="og:title" content="About Me 👑" />
-<meta property="og:description" content="I'm a Computer and Control Engineer, Interested in Cyber Security field specially Network
-and Web penetration testing, I have knowledge with programming (I was a Software
-Team leader in my graduation Project) and Networks, Active Directory.
-I play CTFs on platforms like TryHackMe, HackTheBox, VulnHub, CyberTalents, Port Swigger, &amp; Root-Me."/>
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://0xdigimon.github.io/Digimon/about/" /><meta property="article:section" content="" />
-
+      <title>About Me 👑 Abdelmawla Elamrosy</title>
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <meta charset="utf-8" />
+      <meta name="generator" content="Hugo 0.101.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="author" content="Abdelmawla Elamrosy" />
+      <meta name="description" content="" />
+      <link rel="stylesheet" href="https://0xdigimon.github.io/Digimon/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+  
+      
+      <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="About Me 👑"/>
+  <meta name="twitter:description" content="Abdelmawla Elamrosy"/>
+      <meta property="og:title" content="About Me 👑" />
+  <meta property="og:description" content="Abdelmawla Elamrosy"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://0xdigimon.github.io/Digimon/about/" /><meta property="article:section" content="" />
+  
 
 
 </head>
